@@ -1,0 +1,102 @@
+header{
+    width: 100%;
+    padding: 28px 8%;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-primary-1);
+    z-index: 3;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Reset default figure margins and set layout */
+#nav_logo {
+    margin: 0; /* Removes default browser margin on figure tags */
+    width: 100%; /* Allows the container to be responsive */
+    max-width: 150px; /* Sets the maximum width the logo will ever grow to */
+    height: auto; /* Maintains aspect ratio */
+    display: flex; /* Helps align the image correctly */
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Ensure the image scales within the container */
+#nav_logo img {
+    width: 100%; /* Forces image to take up the container's width */
+    height: auto; /* Maintains the image aspect ratio */
+    display: block; /* Removes potential whitespace below the image */
+    object-fit: contain; /* Ensures the image fits nicely */
+}
+
+/* Optional: Adjust size for larger screens using a Media Query */
+@media (min-width: 768px) {
+    #nav_logo {
+        max-width: 200px; /* Larger size for desktop/tablet */
+    }
+}
+
+#nav-logo {
+    font-size: 24px;
+    color: #e9a209;
+}
+
+#nav_list{
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #1d1d1dad;
+    font-weight: 600;
+}
+
+.nav-item.active a{
+    color: var(--color-neutral-9);
+    border-bottom: 3px solid var(--color-primary-3);
+}
+
+#mobile_btn{
+    display: none;
+}
+
+#mobile_menu{
+    display: none;
+}
+
+@media screen and (max-width: 1170px){
+    #nav_list, #navbar .btn-default{
+        display: none;
+    }
+
+    #mobile_btn {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    #mobile_menu.active{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mobile_nav_list{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 12px 0px;
+    }
+
+    #mobile_nav_list .nav-item{
+        list-style: none;
+        text-align: center;
+    }
+}
